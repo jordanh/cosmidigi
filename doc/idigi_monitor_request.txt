@@ -1,0 +1,10 @@
+POST /ws/Monitor
+<Monitor>
+  <monTopic>DataPoint</monTopic>
+  <monTransportType>http</monTransportType>
+  <monTransportUrl>http://jordan.husney.com:8080/receive</monTransportUrl>
+  <monFormatType>json</monFormatType>
+  <monBatchSize>3</monBatchSize>
+  <monCompression>none</monCompression>
+  <monBatchDuration>0</monBatchDuration>
+</Monitor> 
