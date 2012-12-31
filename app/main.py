@@ -3,7 +3,6 @@
 import sys,os
 import logging
 import json
-import collections
 import numbers
 from bottle import route, get, post, put, run, request, response
 
@@ -37,8 +36,8 @@ def main():
     log.warning("Msg not found in json payload")
     return
   msgs = idigi_put["Document"]["Msg"]
-  if not isinstance(msgs, collections.Iterable):
-    msgs = tuple(datapoints)
+  if isinstance(msgs, dict):
+    msgs = (msgs,)
 
   cosm = SimpleCosm(Config.cosm_out['feed_id'], Config.cosm_out['api_key'])
 
